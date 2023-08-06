@@ -184,3 +184,210 @@ addTwo.forEach((select, i) => {
     });
 });
 
+
+//Function to get exchange rate from api
+
+async function getExchangeRate() {
+    const api={
+        "result":"success",
+        "documentation":"https://www.exchangerate-api.com/docs",
+        "terms_of_use":"https://www.exchangerate-api.com/terms",
+        "time_last_update_unix":1691280001,
+        "time_last_update_utc":"Sun, 06 Aug 2023 00:00:01 +0000",
+        "time_next_update_unix":1691366401,
+        "time_next_update_utc":"Mon, 07 Aug 2023 00:00:01 +0000",
+        "base_code":"USD",
+        "conversion_rates":{
+         "USD":1,
+         "AED":3.6725,
+         "AFN":85.3226,
+         "ALL":94.1527,
+         "AMD":386.2262,
+         "ANG":1.7900,
+         "AOA":831.6304,
+         "ARS":276.6290,
+         "AUD":1.5219,
+         "AWG":1.7900,
+         "AZN":1.6998,
+         "BAM":1.7793,
+         "BBD":2.0000,
+         "BDT":109.4146,
+         "BGN":1.7795,
+         "BHD":0.3760,
+         "BIF":2821.9332,
+         "BMD":1.0000,
+         "BND":1.3401,
+         "BOB":6.9267,
+         "BRL":4.8823,
+         "BSD":1.0000,
+         "BTN":82.7429,
+         "BWP":13.3893,
+         "BYN":2.8394,
+         "BZD":2.0000,
+         "CAD":1.3369,
+         "CDF":2317.6551,
+         "CHF":0.8738,
+         "CLP":850.5113,
+         "CNY":7.1775,
+         "COP":4037.5975,
+         "CRC":544.7343,
+         "CUP":24.0000,
+         "CVE":100.3118,
+         "CZK":22.0793,
+         "DJF":177.7210,
+         "DKK":6.7870,
+         "DOP":56.3897,
+         "DZD":135.7423,
+         "EGP":30.8817,
+         "ERN":15.0000,
+         "ETB":54.9898,
+         "EUR":0.9107,
+         "FJD":2.2179,
+         "FKP":0.7850,
+         "FOK":6.7870,
+         "GBP":0.7848,
+         "GEL":2.6130,
+         "GGP":0.7850,
+         "GHS":11.2692,
+         "GIP":0.7850,
+         "GMD":62.7948,
+         "GNF":8556.7492,
+         "GTQ":7.8627,
+         "GYD":209.1384,
+         "HKD":7.8099,
+         "HNL":24.5979,
+         "HRK":6.8544,
+         "HTG":136.6702,
+         "HUF":355.7377,
+         "IDR":15174.4776,
+         "ILS":3.6697,
+         "IMP":0.7850,
+         "INR":82.7430,
+         "IQD":1308.1648,
+         "IRR":42010.6260,
+         "ISK":132.3258,
+         "JEP":0.7850,
+         "JMD":155.1979,
+         "JOD":0.7090,
+         "JPY":142.0460,
+         "KES":143.1048,
+         "KGS":87.7869,
+         "KHR":4144.0327,
+         "KID":1.5221,
+         "KMF":447.5596,
+         "KRW":1303.9725,
+         "KWD":0.3074,
+         "KYD":0.8333,
+         "KZT":445.1878,
+         "LAK":19276.1386,
+         "LBP":15000.0000,
+         "LKR":315.0363,
+         "LRD":186.4877,
+         "LSL":18.4681,
+         "LYD":4.7882,
+         "MAD":9.8706,
+         "MDL":17.7483,
+         "MGA":4467.4043,
+         "MKD":56.1691,
+         "MMK":2102.8518,
+         "MNT":3455.6450,
+         "MOP":8.0442,
+         "MRU":38.6529,
+         "MUR":45.1071,
+         "MVR":15.4445,
+         "MWK":1077.7592,
+         "MXN":17.0876,
+         "MYR":4.5547,
+         "MZN":63.8797,
+         "NAD":18.4681,
+         "NGN":757.4308,
+         "NIO":36.5924,
+         "NOK":10.1601,
+         "NPR":132.3887,
+         "NZD":1.6403,
+         "OMR":0.3845,
+         "PAB":1.0000,
+         "PEN":3.6467,
+         "PGK":3.5996,
+         "PHP":55.6570,
+         "PKR":286.2465,
+         "PLN":4.0439,
+         "PYG":7294.1876,
+         "QAR":3.6400,
+         "RON":4.5202,
+         "RSD":106.5681,
+         "RUB":95.3960,
+         "RWF":1216.0486,
+         "SAR":3.7500,
+         "SBD":8.4987,
+         "SCR":13.2213,
+         "SDG":565.0780,
+         "SEK":10.6289,
+         "SGD":1.3401,
+         "SHP":0.7850,
+         "SLE":21.2311,
+         "SLL":21231.1017,
+         "SOS":569.0806,
+         "SRD":38.4749,
+         "SSP":1002.5061,
+         "STN":22.2885,
+         "SYP":12953.8701,
+         "SZL":18.4681,
+         "THB":34.7108,
+         "TJS":10.9146,
+         "TMT":3.4996,
+         "TND":3.0818,
+         "TOP":2.3381,
+         "TRY":26.9863,
+         "TTD":6.7592,
+         "TVD":1.5221,
+         "TWD":31.6426,
+         "TZS":2481.7794,
+         "UAH":36.9292,
+         "UGX":3613.8264,
+         "UYU":37.4950,
+         "UZS":11671.0583,
+         "VES":30.9826,
+         "VND":23725.4152,
+         "VUV":119.8302,
+         "WST":2.7354,
+         "XAF":596.7462,
+         "XCD":2.7000,
+         "XDR":0.7479,
+         "XOF":596.7462,
+         "XPF":108.5603,
+         "YER":250.1942,
+         "ZAR":18.4685,
+         "ZMW":19.2717,
+         "ZWL":4593.8624
+        }
+       }
+    const amountVal = amount.value || 1;
+    exRateTxt.innerText = "Getting exchange rate...";
+    try {
+        const exchangeRate = api.conversion_rates[toCur.value];
+        const totalExRate = (amountVal * exchangeRate).toFixed(2);
+        exRateTxt.innerText = `${amountVal} ${fromCur.value} = ${totalExRate} ${toCur.value}`;
+      } catch (error) {
+        exRateTxt.innerText = "Something went wrong...";
+      }
+    }
+
+
+//Event listener for bitton and exchange icon click
+
+window.addEventListener("load", getExchangeRate);
+getBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    getExchangeRate();
+});
+
+exIcon.addEventListener("click", () => {
+    [fromCur.value, toCur.value] = [toCur.value, fromCur.value];
+    [fromCur, toCur].forEach((select) => {
+        const code = select.value;
+        const imgTag = select.parentElement.querySelector("img");
+        imgTag.src = `https://flagcdn.com/48x36/${Country_List[code].toLowerCase()}.png`;
+    });
+    getExchangeRate();
+});
